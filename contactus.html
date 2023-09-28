@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/contactus.css">
+  <link rel="shortcut icon" href="/clglogo.png" type="image/x-icon">
+</head>
+
+<body>
+
+  <div class="navbar">
+    <div class="logo">SUIET</div>
+    <a href="/index.html">Home</a>
+    <a href="/about.html">About Us</a>
+    <a href="/service.html">Services</a>
+    <a href="/contactus.html">Contact Us</a>
+    <div class="menu-icon" onclick="openSidebar()">&#9776;</div>
+  </div>
+
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+    <a href="/index.html">Home</a>
+    <a href="/about.html">About Us</a>
+    <a href="/service.html">Services</a>
+    <a href="/contactus.html">Contact Us</a>
+  </div>
+
+<main>
+  <div class="container">
+    <h2>Contact Us</h2>
+    <form action="" method="POST">
+      <div class="form-group">
+        <input type="text" id="studentName" name="studentName"  placeholder="your name" required>
+      </input>
+      </div>
+      <div class="form-group">
+        <input type="text" id="parentName" name="parentName" placeholder="parentName" required>
+      </input>
+      </div>
+      <div class="form-group">
+        <input type="text" id="state" name="state"  placeholder="state" required>
+      </div>
+      <div class="form-group">
+        <input type="tel" id="contactNo" name="contactNo" placeholder="contact number" required>
+      </input>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Email"  required>
+      </input>
+      </div>
+      <div class="form-group">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <div id="container">
+      <p class="fot">&copy; 2023 Srinivas University. All Rights Reserved. Site by | Aykan</p>
+  </div>
+</footer>
+
+  <script src="index.js"></script>
+</main>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUIET Helpdesk</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="clglogo.png" type="image/x-icon">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">SUIET</div>
+    <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/service">Services</a>
+        <a href="/contactus">Contact Us</a>
+    <div class="menu-icon" onclick="openSidebar()">&#9776;</div>
+</div>
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+    <a href="/">Home</a>
+      <a href="/about">About Us</a>
+      <a href="/service">Services</a>
+       <a href="/contactus">Contact Us</a>
+</div>
+
+<div class="content">
+  <div class="info">
+   <h1>Welcome To<br><span>Srinivas University </span> <br> Help Desk</h1>
+   <p >Our Help Desk is your go-to resource for any inquiries or information you may need.
+       <br>We are here to ensure your experience with Srinivas University is seamless and enjoyable.
+   </p>
+   <button class="btn" id="contactButton">JOIN US</button>
+  </div>
+  <div class="image">
+   <img src="girl.png" alt=""></img>
+  </div>
+</div>
+
+<script>
+    // Your client-side JavaScript code here
+    function openSidebar() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("mySidebar").style.left = "0";
+      document.getElementById("navbar").style.visibility = "hidden";
+    }
+
+    function closeSidebar() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("mySidebar").style.left = "-250px";
+      document.getElementById("navbar").style.visibility = "visible";
+    }
+
+    // Add an event listener to the button with class ".btn"
+    document.getElementById("contactButton").addEventListener("click", function() {
+      // Redirect to the "contactus" route
+      window.location.href = "/contactus";
+    });
+  </script>
+</body>
+</html>
+

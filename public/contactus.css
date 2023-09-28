@@ -1,0 +1,249 @@
+/* Body styling */
+body{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient( to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url("1.jpg");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: Arial;
+}
+
+/* Add some basic styles to the navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: transparent;
+    display: flex;
+    align-items: center; 
+    justify-content: space-evenly; 
+    padding: 10px;
+}
+
+/* Style the logo */
+.logo{
+    color: #ff7200;
+    font-size: 3.5vw;
+    font-family: Arial;
+}
+
+
+
+/* Style the navigation bar links */
+.navbar a {
+    font-size: 16px;
+    color: #fff; 
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+}
+
+/* On hover, the links will change color */
+.navbar a:hover {
+    color: #ff7200;
+}
+
+/* Sidebar styles */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Start with the sidebar off-screen */
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1;
+}
+
+/* Sidebar links */
+.sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* On hover, the sidebar links will change color */
+.sidebar a:hover {
+    color: #ff7200;
+}
+
+/* Close button for the sidebar */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+
+
+/* Add some basic styles to the navigation menu button */
+.menu-icon {
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+}
+
+/* Form container styling */
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style container */
+.container{
+    flex-direction: row;
+    flex-shrink: 1;
+    border: 1px solid white;
+    max-width:  300px;
+    width:  300px;
+    height: 380px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+    transform: translate(0%,-5%);
+    border-radius: 20px;
+    padding: 25px;
+    color: #fff;
+    margin-top:3% ;
+}
+
+.container:hover,.container::after{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+/* Style H2 */
+.container h2{
+    width: 100%;
+    font-family: sans-serif;
+    text-align: center;
+    color: #ff7200;
+    font-size: 22px;
+    border-radius: 10px;
+    margin: 12px;
+    padding: 8px;
+}
+
+.form-group{
+    margin-bottom: 2%;
+}
+
+.form-group input{
+    width: 90%;
+}
+
+
+.form-group input:focus{
+    outline: none;
+}
+
+::placeholder{
+    color: #818181;
+    font-family: Arial;
+}
+
+
+.form-group button{
+    max-width: 240px;
+    width: 100%;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    margin-top: 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    margin-left: 20px;
+    transition: 0.4s ease;
+}
+
+
+.form-group button:hover{
+    opacity: 0.7;
+    border: 1px solid white;
+}
+
+
+.btnn a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Style Input space */
+.container input{
+    background: transparent;
+    border-bottom: 1px solid #ff7200;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 1em;
+    /* margin-top: 30px; */
+    font-family: sans-serif;
+}
+
+/* Footer code */
+#container{
+    background-color: #162d25; 
+    color: #fff;
+    padding: 20px 0;
+    margin: 5% 0;
+    text-align: center;
+}
+.fot:hover{
+    color: #ec6c04;
+}
+.fot{
+    cursor: pointer; 
+    transition: 0.3s ease;
+    text-align: center;
+    width: 100%;
+}
+
+/* Clear floats for the responsive design */
+@media screen and (max-width: 600px) {
+    
+    .navbar{
+        justify-content: space-between;
+    }
+    .navbar a {
+        display: none; /* Hide the main navigation links */
+    }
+    .menu-icon {
+        display: block; /* Show the menu icon */
+    }
+    .sidebar {
+        width: 250px;
+        left: 0; /* Bring the sidebar onto the screen */
+    }
+    .container{
+        width: 85%;
+    }
+    
+}
+@media screen and (min-width: 601px) {
+    .navbar a {
+        display: block; /* Display the main navigation links */
+    }
+    .menu-icon {
+        display: none; /* Hide the menu icon */
+    }
+    .sidebar {
+        left: -250px; /* Keep the sidebar off-screen */
+    }
+    .content {
+        margin-left: 0; /* Remove margin for content */
+    }
+}

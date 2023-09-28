@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="/clglogo.png" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <title>SUIET Helpdesk</title>
+    <link rel="stylesheet" href="/aboutstyle.css">
+</head>
+<body>
+    
+    <div class="navbar">
+        <div class="logo">SUIET</div>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/service">Services</a>
+        <a href="/contactus">Contact Us</a>
+        <div class="menu-icon" onclick="openSidebar()">&#9776;</div>
+    </div>
+    
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/service">Services</a>
+        <a href="/contactus">Contact Us</a>
+    </div>
+   
+    <main>
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <h1>Welcome To Srinivas Institute of Technology,Mukka </h1>
+                </div>
+                <img src="/2.png" alt="College Campus">
+            </div>
+        </section>
+
+        <section class="mission">
+            <div class="container">
+                <div class="mission-content">
+                    <h2>@Srinivas University, Mukka</h2>
+                    <p>Welcome to Srinivas University, Mukka, a place of excellence in higher education. 
+                        Established with a commitment to provide quality education, Srinivas University has evolved into a distinguished institution known fo
+                        r its academic excellence, innovative programs, and strong community engagement.<a href="https://srinivasuniversity.edu.in/Institute-Of-Engineering-Technology/About-Us" class="stretched-link">more..</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="fot">&copy; 2023 Srinivas University. All Rights Reserved. Site by | Aykan</p>
+        </div>
+    </footer>
+    <script>
+        // Your client-side JavaScript code here
+        function openSidebar() {
+          document.getElementById("mySidebar").style.width = "250px";
+          document.getElementById("mySidebar").style.left = "0";
+          document.getElementById("navbar").style.visibility = "hidden";
+        }
+    
+        function closeSidebar() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("mySidebar").style.left = "-250px";
+          document.getElementById("navbar").style.visibility = "visible";
+        }
+    
+        // Add an event listener to the button with class ".btn"
+        document.getElementById("contactButton").addEventListener("click", function() {
+          // Redirect to the "contactus" route
+          window.location.href = "/contactus";
+        });
+      </script>
+</body>
+</html>

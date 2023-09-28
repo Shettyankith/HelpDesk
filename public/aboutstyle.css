@@ -1,0 +1,218 @@
+
+h1{
+    color:#f66b09;
+    font-size:1.5rem;
+font-family: 'Roboto', sans-serif;
+    
+}
+body {
+    background: url(1.jpg);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+
+
+main {
+    /* background-color: #f5f5f5; */
+    padding: 20px 0;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.about-content {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.about h2 {
+    font-size: 32px;
+    margin: 0 0 20px;
+}
+
+.about p {
+    font-size: 18px;
+    color: #555;
+}
+
+.about img {
+    max-width: 100%;
+    border-radius: 5%;
+    height: auto;
+}
+
+.mission {
+    background-color: #c76012;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.mission-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mission h2 {
+    font-size: 32px;
+    margin: 0 0 20px;
+}
+
+.mission p {
+    font-size: 18px;
+}
+
+
+footer {
+    background-color: #162d25; 
+    color: #fff;
+    padding: 20px 0;
+    margin: 5% 0;
+    text-align: center;
+}
+.fot:hover{
+    color: #ec6c04;
+}
+.fot{
+    cursor: pointer; 
+    transition: 0.3s ease;
+    text-align: center;
+    width: 100%;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* Add some basic styles to the navigation bar */
+ .navbar {
+    overflow: hidden;
+    background-color: transparent;
+    display: flex;
+    align-items: center; 
+    justify-content: space-evenly; 
+    padding: 10px;
+}
+
+/* Style the logo */
+.logo{
+    color: #ff7200;
+    font-size: 3.5vw;
+    font-family: Arial;
+}
+/* Style the navigation bar links */
+.navbar a {
+    font-size: 16px;
+    color: #fff; 
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+}
+
+/* On hover, the links will change color */
+.navbar a:hover {
+    color: #ff7200;
+}
+
+/* Sidebar styles */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Start with the sidebar off-screen */
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1;
+}
+
+/* Sidebar links */
+.sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* On hover, the sidebar links will change color */
+.sidebar a:hover {
+    color: #ff7200;
+}
+
+/* Close button for the sidebar */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+
+
+/* Add some basic styles to the navigation menu button */
+.menu-icon {
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+}
+
+/* Clear floats for the responsive design */
+@media screen and (max-width: 600px) {
+    .navbar{
+        justify-content: space-between;
+    }
+    .navbar a {
+        display: none; /* Hide the main navigation links */
+    }
+    .menu-icon {
+        display: block; /* Show the menu icon */
+    }
+    .sidebar {
+        width: 250px;
+        left: 0; /* Bring the sidebar onto the screen */
+    }
+    
+}
+@media screen and (min-width: 601px) {
+    .navbar a {
+        display: block; /* Display the main navigation links */
+    }
+    .menu-icon {
+        display: none; /* Hide the menu icon */
+    }
+    .sidebar {
+        left: -250px; /* Keep the sidebar off-screen */
+    }
+    
+}
