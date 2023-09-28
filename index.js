@@ -2,15 +2,41 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-// const mongoose =require('mongoose');
-
-
-// const bodyParser = require('body-parser'); // For parsing form data
+const mongoose =require('mongoose');
+const bodyParser = require('body-parser'); // For parsing form data
 // const { MongoClient } = require('mongodb');
-// // const connectToDatabase = require('./db');
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.use(bodyParser.urlencoded({ extended: true }));
-// const mongoURL = 'mongodb://0.0.0.0/HelpDesk'; 
+
+// const mongoURL = 'mongodb+srv://shettyankith2003:54wGOjwGgbv1Qldo@cluster0.u1wptqf.mongodb.net/Helpdesk'; 
+mongoose.connect("mongodb+srv://shettyankith2003:54wGOjwGgbv1Qldo@cluster0.u1wptqf.mongodb.net/Helpdesk",{ useNewUrlParser: true}, {useUnifiedTopology: true });
+const formschema={
+  studentName: String,
+  parentName: String,
+  state: String,
+  contactNo: String,
+  email: String
+}
+const details=mongoose.model("details",formschema);
+
+app.post("/",function(req,res){
+  let newdetails=new details({
+    studentName:req.body.studentName,
+    parentName:req.body.parentName,
+    state:req.body.state,
+    contactNo:req.body.contactNo,
+    email:req.body.email
+  });
+  newdetails.save();
+  res.redirect("/");
+})
+
+
+
+
+
+
+
 
 
 // Set the view engine to EJS
@@ -41,7 +67,7 @@ app.get('/contactus', (req, res) => {
 
 
 // // Define a route for handling form submissions
-// app.post('/submit-form', (req, res) => {
+// app.post('/', (req, res) => {
 //   const formData = req.body; // Get form data from the request
 
 //   // Connect to MongoDB
