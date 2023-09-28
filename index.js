@@ -2,14 +2,15 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+// const mongoose =require('mongoose');
 
 
-const bodyParser = require('body-parser'); // For parsing form data
-const { MongoClient } = require('mongodb');
-// const connectToDatabase = require('./db');
+// const bodyParser = require('body-parser'); // For parsing form data
+// const { MongoClient } = require('mongodb');
+// // const connectToDatabase = require('./db');
 
-app.use(bodyParser.urlencoded({ extended: true }));
-const mongoURL = 'mongodb+srv://shettyankith:mjnLh9heUyr7fXd@cluster0.uaivfyu.mongodb.net/?retryWrites=true&w=majority/HelpDesk'; 
+// app.use(bodyParser.urlencoded({ extended: true }));
+// const mongoURL = 'mongodb://0.0.0.0/HelpDesk'; 
 
 
 // Set the view engine to EJS
@@ -39,38 +40,38 @@ app.get('/contactus', (req, res) => {
 
 
 
-// Define a route for handling form submissions
-app.post('/submit-form', (req, res) => {
-  const formData = req.body; // Get form data from the request
+// // Define a route for handling form submissions
+// app.post('/submit-form', (req, res) => {
+//   const formData = req.body; // Get form data from the request
 
-  // Connect to MongoDB
-  MongoClient.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
-    if (err) {
-      console.error('Error connecting to MongoDB:', err);
-      res.status(500).send('Error connecting to the database');
-      return;
-    }
+//   // Connect to MongoDB
+//   MongoClient.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
+//     if (err) {
+//       console.error('Error connecting to MongoDB:', err);
+//       res.status(500).send('Error connecting to the database');
+//       return;
+//     }
 
-    const db = client.db(); // Get the database instance
-    // Insert the form data into the "contactusform" collection
-    db.collection('contactusform').insertOne(formData, (err, result) => {
-      if (err) {
-        console.error('Error inserting data into MongoDB:', err);
-        res.status(500).send('Error submitting form');
-        client.close();
-        return;
-      }
+//     const db = client.db(); // Get the database instance
+//     // Insert the form data into the "contactusform" collection
+//     db.collection('contactusform').insertOne(formData, (err, result) => {
+//       if (err) {
+//         console.error('Error inserting data into MongoDB:', err);
+//         res.status(500).send('Error submitting form');
+//         client.close();
+//         return;
+//       }
 
-      console.log('Form data submitted:', formData);
+//       console.log('Form data submitted:', formData);
 
-      // Close the MongoDB connection
-      client.close();
+//       // Close the MongoDB connection
+//       client.close();
 
-      // Send a response with a success message
-      res.status(200).send('Form submitted successfully');
-    });
-  });
-});
+//       // Send a response with a success message
+//       res.status(200).send('Form submitted successfully');
+//     });
+//   });
+// });
 
 
 
